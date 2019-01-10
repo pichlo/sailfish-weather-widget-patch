@@ -22,7 +22,7 @@
              }
              delegate: Item {
 -                width: weatherForecastList.width/5
-+                width: weatherForecastList.width / (rotated ? 9 : 5)
++                width: weatherForecastList.width / Math.round(5 * (rotated ? Screen.height / Screen.width : 1))
                  height: weatherForecastList.height
                  WeatherForecastItem {
                      highlighted: root.highlighted
