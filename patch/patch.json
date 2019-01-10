@@ -1,0 +1,8 @@
+{
+   "name": "Extend number of days in Weather forecast widget",
+   "description": "A simple patch to show more days in the eventsview weather forecast in the landscape mode.",
+   "category": "homescreen",
+   "infos": {
+      "maintainer": "pichlo"
+   }
+}
