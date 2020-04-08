@@ -1,6 +1,6 @@
 --- /usr/lib/qt5/qml/Sailfish/Weather/WeatherBannerForecast.qml
 +++ /usr/lib/qt5/qml/Sailfish/Weather/WeatherBannerForecast.qml
-@@ -75,7 +75,7 @@ SilicaListView {
+@@ -73,7 +73,7 @@ Column {
              id: weatherForecastList
  
              anchors.fill: parent
@@ -9,7 +9,7 @@
              currentIndex: -1
              interactive: false
              orientation: ListView.Horizontal
-@@ -84,7 +87,7 @@ Column {
+@@ -87,7 +87,7 @@ Column {
              delegate: Item {
  
 -                // Show 5 items on normal phones, 7 on larger screens

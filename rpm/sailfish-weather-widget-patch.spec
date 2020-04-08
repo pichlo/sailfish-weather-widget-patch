@@ -1,11 +1,11 @@
 Name:          sailfish-weather-widget-patch
 Summary:       Patch: Extend number of days in Weather forecast widget
 Version:       0.0.2
-Release:       2
+Release:       3
 Group:         System/Tools
 BuildArch:     noarch
 Requires:      patchmanager
-Requires:      sailfish-weather >= 1.0.0
+Requires:      sailfish-weather >= 1.0.2
 
 Vendor:        pichlo
 Distribution:  SailfishOS
@@ -40,6 +40,9 @@ fi
 %{_datadir}/patchmanager/patches/sailfish-weather-widget-patch
 
 %changelog
+* Fri Apr 08 2020 Peter Pichler <maemo@pichler.co.uk> 0.0.2-3
+- Update for SFOS 3.3.0.x
+
 * Fri Apr 26 2019 Peter Pichler <maemo@pichler.co.uk> 0.0.2-2
 - Update for SFOS 3.0.3.x
 
