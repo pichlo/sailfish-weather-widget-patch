@@ -1,12 +1,11 @@
 Name:          sailfish-weather-widget-patch
 Summary:       Patch: Extend number of days in Weather forecast widget
 Version:       0.0.2
-Release:       1
+Release:       2
 Group:         System/Tools
 BuildArch:     noarch
 Requires:      patchmanager
-Requires:      sailfish-weather >= 0.2.6
-Requires:      sailfish-weather <= 1.0.0
+Requires:      sailfish-weather >= 1.0.0
 
 Vendor:        pichlo
 Distribution:  SailfishOS
@@ -41,6 +40,9 @@ fi
 %{_datadir}/patchmanager/patches/sailfish-weather-widget-patch
 
 %changelog
+* Fri Apr 26 2019 Peter Pichler <maemo@pichler.co.uk> 0.0.2-2
+- Update for SFOS 3.0.3.x
+
 * Thu Jan 10 2019 Peter Pichler <maemo@pichler.co.uk> 0.0.2-1
 - Made the ratio between portrait and landscape number of icons dynamic, depending on the screen aspect ratio.
 

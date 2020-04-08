@@ -1,28 +1,21 @@
 --- /usr/lib/qt5/qml/Sailfish/Weather/WeatherBannerForecast.qml
 +++ /usr/lib/qt5/qml/Sailfish/Weather/WeatherBannerForecast.qml
-@@ -1,6 +1,7 @@
- import QtQuick 2.0
- import Sailfish.Silica 1.0
- import Sailfish.Weather 1.0
-+import org.nemomobile.lipstick 0.1
+@@ -75,7 +75,7 @@ SilicaListView {
+             id: weatherForecastList
  
- Column {
-     id: root
-@@ -14,6 +15,8 @@ Column {
-                                : (forecastModel.status == Weather.Loading && forecastModel.count > 0) ? 0.4 : 0.0
-     Behavior on dataOpacity { FadeAnimation { property: "dataOpacity" } }
- 
-+    readonly property bool rotated: Lipstick.compositor.topmostWindowOrientation & (Qt.LandscapeOrientation | Qt.InvertedLandscapeOrientation)
-+
-     function attemptReload() {
-         forecastModel.attemptReload()
-     }
+             anchors.fill: parent
+-            clip: true // limit to 5-7 day forecast
++            clip: true
+             currentIndex: -1
+             interactive: false
+             orientation: ListView.Horizontal
 @@ -84,7 +87,7 @@ Column {
-                 timestamp: weatherModel.timestamp
-             }
              delegate: Item {
--                width: weatherForecastList.width/5
-+                width: weatherForecastList.width / Math.round(5 * (rotated ? Screen.height / Screen.width : 1))
+ 
+-                // Show 5 items on normal phones, 7 on larger screens
+-                readonly property int columnCount: Math.round(weatherForecastList.width / (540 * Theme.pixelRatio/5)) >= 7 ? 7 : 5
++                // Show 5 items on normal phones, proportionally more on larger screens
++                readonly property int columnCount: Math.round(weatherForecastList.width / (540 * Theme.pixelRatio/5))
+ 
+                 width: Math.round(weatherForecastList.width/columnCount)
                  height: weatherForecastList.height
-                 WeatherForecastItem {
-                     highlighted: root.highlighted
